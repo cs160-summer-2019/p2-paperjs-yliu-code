@@ -48,6 +48,26 @@
 				filePath: '/static/coloring/images/mandala-freepik.svg'
 			};	
 
+      // rectangle
+//       var topL = new paper.Point(1, 1);
+//       var bottomR = new paper.Point(1800, 1800);
+
+      // Create a rectangle shaped path between
+      // the topLeft and bottomRight points:
+//       var path = new paper.Path.Rectangle({
+//           topLeft: topL,
+//           bottomRight: bottomR,
+//           // Fill the path with a gradient of three color stops
+//           // that runs between the two points we defined earlier:
+//           fillColor: {
+//               gradient: {
+//                   stops: ['yellow', 'red', 'blue']
+//               },
+//               origin: topL,
+//               destination: bottomR
+//           }
+//       });
+      
 			// color palette
 			var cp = {
 				history: ["#000000"], // black selected by default
@@ -59,14 +79,34 @@
 			// you may also add code outside of the function (e.g., global variables)
 			function myGradientInteraction(){
 				var tool = new paper.Tool();
+        let from = new paper.Point(250, 300);
+        let to = new paper.Point(475, 425);
+        let path = new paper.Path.Rectangle(from, to);
+        let start;
+        let end;
+
+        // Close the path
+        path.closed = true;
+
+        // Give the path a color and fill color
+        path.fillColor = 'red';
+
+        // Draw the path now
+        paper.view.draw();
 
 				tool.onMouseDown = function (event) {
-
+          start = event.point;
 				}
 
 				tool.onMouseUp = function (event) {
-					
-				}
+					  path.fillColor = {
+              gradient: {
+                  stops: cp.history.slice(1).slice(-2)
+              },
+              origin: start,
+              destination: event.point
+            } 
+        }
 			}
 
 			// your custom interaction goes here!
