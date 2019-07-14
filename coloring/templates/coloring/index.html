@@ -73,6 +73,17 @@
       text-align: center;
     }
     
+    .wheel-des{
+      position:fixed;
+      right:5px;
+      top:10px;
+    }
+    
+    .pallete-des{
+      position:fixed;
+      left:5px;
+      top:10px;
+    }
   </style>
 
   <script type="text/javascript" canvas="canvas">
@@ -274,10 +285,12 @@
       
       $('.fa-history').on('click', function(event) {        
         $('#color-palette').toggle('show');
+        $('.pallete-des').toggle('show');
       });
       
       $('.fa-palette').on('click', function(event) {        
         $('#colorWheel').toggle('show');
+        $('.wheel-des').toggle('show');
       });
       $('.fa-dice').on('click', function(event) {        
         $('#colorpad').toggle('show');
@@ -312,6 +325,14 @@
         <input id="colorWheel" class="jscolor" value="ffcc00">
     </div>
   </div>
+  
+  <p class = "pallete-des">
+    Pallete History
+  </p>
+  
+  <p class = "wheel-des">
+    Color Wheel
+  </p>
   
   <div class="container-fluid" style="padding: 20px;">
     <div class = "row">
