@@ -17,14 +17,14 @@
     
   <style type="text/css">
     #color-palette {
-      width: 50%;
+      width: 90px;
       background-color: #f1f1f1;
       display: flex;
       flex-wrap: wrap;
-      position: absolute;
-      bottom: 26%;
-      left: 25%;
-      right: 25%;
+      position: fixed;
+      top: 5%;
+      left: 0;
+      right: 90%;
       margin-top: 10;
       margin-bottom: 0;
     }
@@ -39,19 +39,21 @@
     }
 
     #myCanvas {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 10%;
+      margin-bottom: 0;
       display: block;
     }
     
     #colorWheel {
-      position: absolute;
-      left: 40%;
-      bottom: 20;
-      margin-bottom: 10;
+      width: 90px;
+      position: fixed;
+      right: 0;
+      top: 5%;
     }
     
     #wrapper {
@@ -69,16 +71,6 @@
     
     .icon-container{
       text-align: center;
-    }
-    
-    .wheel-container{
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .palette{
-      position: relative;
-      margin-top: -20px;
     }
     
   </style>
@@ -317,11 +309,7 @@
        <div id="color-palette"></div>
     </div>
     <div class = "row">
-      <div class = "col-sm-1">   
-      </div>
-      <div class = "col-sm-11 wheel-container">
         <input id="colorWheel" class="jscolor" value="ffcc00">
-      </div>
     </div>
   </div>
   
